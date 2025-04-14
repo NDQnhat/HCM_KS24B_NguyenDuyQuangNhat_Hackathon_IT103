@@ -111,6 +111,32 @@ function saveChange() {
         let $email = document.getElementById("edit-email").value;
         let $class = document.getElementById("edit-class").value;
 
+    
+        if ($fullname === "") {
+            mistake = "Họ tên không được bỏ trống";
+            // document.getElementById("edit-nameMistake").innerHTML = mistake;
+            alert(mistake)
+            return;
+        }
+        if ($stuId === "") {
+            mistake = "Mã số sinh viên không được bỏ trống";
+            document.getElementById("edit-idMistake").innerHTML = mistake;
+            alert(mistake)
+            return;
+        }
+        if ($email === "") {
+            mistake = "Invalid email";
+            document.getElementById("edit-emailMistake").innerHTML = mistake;
+            alert(mistake)
+            return;
+        }
+        if ($class === "") {
+            mistake = "Lớp không được bỏ trống";
+            document.getElementById("edit-classMistake").innerHTML = mistake;
+            alert(mistake)
+            return;
+        }
+
         found.fullname = $fullname;
         found.stuId = $stuId;
         found.email = $email;
