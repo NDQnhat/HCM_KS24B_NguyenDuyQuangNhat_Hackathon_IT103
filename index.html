@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N24DTCN119_Hackathon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h2 class="text-center mt-5 text-opacity-75 fw-bolder fs-32">Quản Lý Sinh Viên</h2>
+    <div class="container mt-5 w-50 h-100 d-flex flex-column shadow rounded">
+        <div class="row m-3">
+            <input type="text" class="form-control" placeholder="Họ và tên" id="fullname">
+            <div class="text-danger" id="nameMistake"></div>
+        </div>
+        <div class="row m-3">
+            <input type="text" class="form-control" placeholder="Mã số sinh viên" id="stuId">
+            <div class="text-danger" id="idMistake"></div>
+        </div>
+        <div class="row m-3">
+            <input type="email" class="form-control" placeholder="Email" id="email">
+            <div class="text-danger" id="emailMistake"></div>
+        </div>
+        <div class="row m-3">
+            <input type="text" class="form-control" placeholder="Lớp" id="class">
+            <div class="text-danger" id="classMistake"></div>
+        </div>
+        <div class="row m-3">
+            <button class="btn btn-primary w-25" onclick="addStu()">Thêm sin viên</button>
+        </div>
+    </div>
+    <div class="container mt-5 w-50 h-100 d-flex flex-column shadow rounded mb-5">
+        <div class="row m-3">
+            <input type="text" class="form-control" placeholder="Tìm kiếm theo tên....." id="nameSearch">
+        </div>
+        <table class="table table-shadow table-bordered">
+            <thead class="table-secondary">
+              <tr class="text-center">
+                <th scope="col">Họ và tênn</th>
+                <th scope="col">MSSV</th>
+                <th scope="col">Email</th>
+                <th scope="col">lớp</th>
+                <th scope="col" colspan="2">Action</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit box</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="col mt-3">
+                    <input type="text" class="form-control" placeholder="Họ và tên" id="edit-fullname">
+                  </div>
+                  <div class="col mt-3">
+                    <input type="text" class="form-control" placeholder="MSSV" id="edit-stuId">
+                  </div>
+                  <div class="col mt-3">
+                    <input type="email" class="form-control" placeholder="Email" id="edit-email">
+                  </div>
+                  <div class="col mt-3">
+                    <input type="text" class="form-control" placeholder="Lớp" id="edit-class">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="save-change-btn" onclick="saveChange()" data-bs-dismiss="modal">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
